@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="backoff" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/backoff/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/backoff/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/backoff/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/backoff/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/backoff/src" />
+      <root url="file://$PROJECT_DIR$/deps/backoff/src" />
+    </SOURCES>
+  </library>
+</component>

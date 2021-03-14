@@ -9,7 +9,16 @@ use Mix.Config
 
 config :transaction_api,
   namespace: TransactionAPI,
-  ecto_repos: [TransactionAPI.Repo]
+  ecto_repos: [TransactionAPI.Repo],
+  event_stores: [TransactionAPI.EventStore]
+
+config :transaction_api, TransactionAPI.App,
+       event_store: [
+         adapter: Commanded.EventStore.Adapters.EventStore,
+         event_store: TransactionAPI.EventStore
+       ],
+       pub_sub: :local,
+       registry: :local
 
 # Configures the endpoint
 config :transaction_api, TransactionAPIWeb.Endpoint,
@@ -27,6 +36,12 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :commanded,
+       event_store_adapter: Commanded.EventStore.Adapters.EventStore
+
+config :commanded_ecto_projections,
+       repo: TransactionAPI.Repo
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
+
